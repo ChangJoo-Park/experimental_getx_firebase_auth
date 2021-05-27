@@ -5,7 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "getx_firebase_login",
+      "name": "release",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "debug",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug"
