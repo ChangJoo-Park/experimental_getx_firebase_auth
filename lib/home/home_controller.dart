@@ -6,7 +6,12 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     print("HOME CONTROLLER INIT");
-    FirebaseMessaging.instance.getToken().then((value) => token.value = value!);
+    FirebaseMessaging.instance.getToken().then((value) {
+      token.value = value!;
+    }).catchError((error) {
+      print(error);
+      token.value = "FCM 토큰을 가져오는데 문제가 있음";
+    });
     super.onReady();
   }
 }
