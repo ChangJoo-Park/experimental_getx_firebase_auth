@@ -24,9 +24,11 @@ class HomeView extends StatelessWidget {
                 stream: authController.user,
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.connectionState == ConnectionState.active) {
-                    User user = snapshot.data as User;
-                    var uid = user.uid;
-                    return Container(child: SelectableText("사용자 UID \n$uid"));
+                    if (snapshot.hasData) {
+                      User user = snapshot.data as User;
+                      var uid = user.uid;
+                      return Container(child: SelectableText("사용자 UID \n$uid"));
+                    }
                   }
                   return Container();
                 },
