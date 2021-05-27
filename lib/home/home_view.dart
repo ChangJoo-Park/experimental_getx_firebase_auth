@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
                   if (snapshot.connectionState == ConnectionState.active) {
                     User user = snapshot.data as User;
                     var uid = user.uid;
-                    return Container(child: Text("사용자 UID \n$uid"));
+                    return Container(child: SelectableText("사용자 UID \n$uid"));
                   }
                   return Container();
                 },
@@ -34,10 +34,7 @@ class HomeView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Obx(
-                  () => TextFormField(
-                    maxLines: 10,
-                    initialValue: controller.token.value,
-                  ),
+                  () => SelectableText(controller.token.value),
                 ),
               ),
             ],
