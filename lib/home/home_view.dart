@@ -37,6 +37,10 @@ class HomeView extends StatelessWidget {
                   () => SelectableText(controller.token.value),
                 ),
               ),
+              TextButton(
+                child: Text("Sign Out"),
+                onPressed: authController.logout,
+              )
             ],
           )),
         );

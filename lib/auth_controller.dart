@@ -26,7 +26,6 @@ class AuthController extends GetxController {
   }
 
   /// 임의로 익명 로그인을 함
-  loginWithAnonymous() {
-    return _auth.signInAnonymously();
-  }
+  loginWithAnonymous() => _auth.signInAnonymously();
+  logout() => _auth.signOut();
 }
